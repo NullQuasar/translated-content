@@ -166,7 +166,7 @@ cd beastify</pre>
 
 <span class="tag token"><span class="tag token"><span class="punctuation token">&lt;/</span>html</span><span class="punctuation token">&gt;</span></span></code></pre>
 
-<p>Tenemos un elemento <code>&lt;div&gt;</code> con un ID <code>"popup-content"</code> que contiene un elemento para cada elección de animal. Además, tenemos otro <code>&lt;div&gt;</code> con un ID <code>"error-content"</code> y una clase <code>"hidden"</code>, que usaremos en el case de que surja algún problema al inicializar la ventana emergente.</p>
+<p>Tenemos un elemento <code>&lt;div&gt;</code> con un ID <code>"popup-content"</code> que contiene un elemento para cada elección de animal. Además, tenemos otro <code>&lt;div&gt;</code> con un ID <code>"error-content"</code> y una clase <code>"hidden"</code>, que usaremos en el caso de que surja algún problema al inicializar la ventana emergente.</p>
 
 <p>Note que referenciamos los archivos CSS y JS en el HTML como lo haríamos si se tratase de una página web.</p>
 
@@ -327,7 +327,7 @@ browser<span class="punctuation token">.</span>tabs<span class="punctuation toke
 <p>La función <code>beastify()</code> hace tres cosas:</p>
 
 <ul>
- <li>map the button clicked to a URL pointing to an image of a particular beast</li>
+ <li>Mapea el botón cliqueado a una URL apuntando a una imagen de una bestia en particular</li>
  <li>Oculta todo el contenido de la página al insertar CSS con la API <code><a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/insertCSS">browser.tabs.insertCSS()</a></code></li>
  <li>Envía un mensaje "beastify" al script de contenido usando la API <code><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage">browser.tabs.sendMessage()</a></code>, solicitándole "bestificar" la página, y enviándole la URL de la imagen.</li>
 </ul>
@@ -397,8 +397,8 @@ browser<span class="punctuation token">.</span>tabs<span class="punctuation toke
 <p>Luego, en la linea 40, donde el script de contenido atiende mensajes provenientes de la ventana emergente (usando la API <code><a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/onMessage">browser.runtime.onMessage</a></code>), vemos que ésta puede enviar dos mensajes diferentes: "beastify" y "reset".</p>
 
 <ul>
- <li>si el mensaje es "beastify", esperamos que contenga la URL de la imagen. Removemos el contenido que ha sido agregado por el anterior llamado a "beastify", y luego construimos y  añadimos un elemento <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">&lt;img&gt;</a></code> cuyo atributo <code>src</code> contiene la URL de la imagen.</li>
- <li>si el mensaje es "reset", simplemente removemos cualquier imagen que haya sido agregada antes.</li>
+ <li>Si el mensaje es "beastify", esperamos que contenga la URL de la imagen. Removemos el contenido que ha sido agregado por el anterior llamado a "beastify", y luego construimos y  añadimos un elemento <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">&lt;img&gt;</a></code> cuyo atributo <code>src</code> contiene la URL de la imagen.</li>
+ <li>Si el mensaje es "reset", simplemente removemos cualquier imagen que haya sido agregada antes.</li>
 </ul>
 
 <h3 id="Las_bestias">Las bestias</h3>
